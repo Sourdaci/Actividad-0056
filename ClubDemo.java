@@ -25,4 +25,15 @@ public class ClubDemo{
 		club.join(new Membership("Michael", 1, 2004));
 		System.out.println("The club has " + club.numberOfMembers() + " members.");
 	}
+	
+	// prueba metodo joinedMonth()
+	public void pruebaJoinedMonth(){
+		club.join(new Membership("David", 2, 2004));
+		club.join(new Membership("Michael", 1, 2004));
+		club.join(new Membership("Peter", 2, 2007));
+		club.join(new Membership("Ben", 4, 2004));
+		System.out.println("Socios del mes 1: " + club.joinedMonth(1));
+		System.out.println("Socios del mes 16: " + club.joinedMonth(16));
+		System.out.println("Socios del mes 2: " + club.joinedMonth(2));
+	}
 }
