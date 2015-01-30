@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 /**
 * Provide a demonstration of the Club and Membership
 * classes.
@@ -35,5 +36,18 @@ public class ClubDemo{
 		System.out.println("Socios del mes 1: " + club.joinedMonth(1));
 		System.out.println("Socios del mes 16: " + club.joinedMonth(16));
 		System.out.println("Socios del mes 2: " + club.joinedMonth(2));
+	}
+	
+	// prueba metodo purge()
+	public void pruebaPurge(){
+		club.join(new Membership("David", 2, 2004));
+		club.join(new Membership("Michael", 1, 2004));
+		club.join(new Membership("Peter", 2, 2007));
+		club.join(new Membership("Ben", 4, 2004));
+		ArrayList<Membership> socio = new ArrayList<Membership>(club.purge(2));
+		System.out.println("Socios borrados del mes 2: " + socio.size());
+		socio = null;
+		socio = club.purge(16);
+		System.out.println("Socios del mes 16: " + socio.size());
 	}
 }
