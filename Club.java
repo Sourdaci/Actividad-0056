@@ -62,7 +62,7 @@ public class Club{
      * @param year El año en el que estamos interesados
      * @return Una coleccion con los socios que se han dado de baja del club
      */
-    public ArrayList<Membership> purge(int mes){
+    public ArrayList<Membership> purge(int mes, int year){
         ArrayList<Membership> bajaSocios = new ArrayList<Membership>();
         if(mes < 1 || mes > 12){
             System.out.println("El numero de mes introducido NO es valido. Validos de 1 a 12.");
@@ -71,7 +71,7 @@ public class Club{
             Membership socio = null;
             while(iterador.hasNext()){
                 socio = iterador.next();
-                if(socio.getMonth() == mes){
+                if(socio.getMonth() == mes && socio.getYear() == year){
                     bajaSocios.add(socio);
                     iterador.remove();
                 }

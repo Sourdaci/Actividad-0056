@@ -41,11 +41,12 @@ public class ClubDemo{
 	// prueba metodo purge()
 	public ArrayList<Membership> pruebaPurge(){
 		club.join(new Membership("David", 2, 2004));
-		club.join(new Membership("Michael", 1, 2004));
-		club.join(new Membership("Peter", 2, 2007));
+		club.join(new Membership("Michael", 9, 2004));
+		club.join(new Membership("Peter", 6, 2007));
 		club.join(new Membership("Ben", 4, 2004));
+		club.join(new Membership("Chris", 2, 2004));
 		System.out.println("Mes 2");
-		ArrayList<Membership> socio = new ArrayList<Membership>(club.purge(2));
+		ArrayList<Membership> socio = new ArrayList<Membership>(club.purge(2, 2004));
 		return socio;
 	}
 }
